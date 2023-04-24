@@ -6,9 +6,7 @@ import Contacts from "components/Form/Contacts";
 export default function App() {
   return (
     <div className="App">
-      <h1>Phonebook</h1>
       <Form />
-      <h2>Contacts</h2>
       <Filter />
       <Contacts />
     </div>
