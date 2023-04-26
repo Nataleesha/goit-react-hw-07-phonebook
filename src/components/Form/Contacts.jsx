@@ -23,9 +23,10 @@ const Contacts = () => {
     contact.name.toLowerCase().includes(lowerCaseFilter)
   );
 
-  return (
+  return contacts.length === 0 && isLoading && !error ? (
+    <Loader />
+  ) : (
     <>
-      {isLoading && !error && <Loader />}
       <ul className={css.list}>
         {filteredContacts.map(({ id, name, number }) => (
           <li key={id} className={css.item}>
