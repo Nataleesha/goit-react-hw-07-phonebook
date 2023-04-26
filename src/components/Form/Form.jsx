@@ -5,8 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchContacts } from "components/Redux/fetchContactsOperation";
 import { getContacts } from "components/Redux/selectors";
 import { addContact } from "components/Redux/addContactOperation";
-
-//form.reset();
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 export default function Form() {
   const dispatch = useDispatch();
@@ -38,9 +37,10 @@ export default function Form() {
         (contact) => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
-      alert(name + " is already in your contacts.");
+      Notify.failure(name + " is already in your contacts.");
     } else {
       dispatch(addContact({ id: nanoid(), name, number }));
+      Notify.success(`${name} was added to your contacts`);
       setName("");
       setNumber("");
     }

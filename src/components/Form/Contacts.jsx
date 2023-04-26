@@ -8,6 +8,7 @@ import {
   getFilter,
 } from "components/Redux/selectors";
 import { deleteContact } from "components/Redux/deleteContactOperation";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -16,8 +17,9 @@ const Contacts = () => {
   const error = useSelector(getError);
   const filter = useSelector(getFilter);
   const lowerCaseFilter = filter.toLowerCase();
-  const removeContact = (contactId) => {
+  const removeContact = (contactId, contactName) => {
     dispatch(deleteContact(contactId));
+    Notify.success(`${contactName} was deleted from your contacts`);
   };
   const filteredContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(lowerCaseFilter)
@@ -33,7 +35,7 @@ const Contacts = () => {
             <button
               className={css.btn}
               type="button"
-              onClick={() => removeContact(id)}
+              onClick={() => removeContact(id, name)}
             >
               Delete
             </button>
