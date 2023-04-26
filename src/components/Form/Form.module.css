@@ -35,3 +35,8 @@
   box-shadow: none;
   background-color: #bbe38f;
 }
+
+.loader-container {
+  padding-left: 100px;
+  padding-top: 60px;
+}
