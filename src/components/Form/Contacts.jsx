@@ -30,9 +30,6 @@ const Contacts = () => {
       <ul className={css.list}>
         {filteredContacts.map(({ id, name, number }) => (
           <li key={id} className={css.item}>
-            <p className={css.text}>
-              {name}: {number}
-            </p>
             <button
               className={css.btn}
               type="button"
@@ -40,6 +37,9 @@ const Contacts = () => {
             >
               Delete
             </button>
+            <p className={css.text}>
+              {name}: {number}
+            </p>
           </li>
         ))}
       </ul>

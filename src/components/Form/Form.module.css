@@ -6,8 +6,8 @@
   display: block;
   margin-top: 5px;
   margin-bottom: 20px;
-  width: 160px;
-  height: 20px;
+  width: 200px;
+  height: 25px;
 }
 
 .item {
@@ -23,10 +23,11 @@
 
 .btn {
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 8px;
   border: transparent;
-  padding: 3px 8px;
-  font-size: 14px;
+  margin-right: 20px;
+  padding: 8px 20px;
+  font-size: 16px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
